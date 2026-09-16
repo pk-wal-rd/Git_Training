@@ -1,0 +1,16 @@
+name: Build and Run main.c
+
+on:
+  pull_request:
+    branches: [ "**" ]
+
+jobs:
+  build-and-run:
+    runs-on: windows-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Run run.bat (compile + execute main.c)
+        shell: cmd
+        run: run.bat
